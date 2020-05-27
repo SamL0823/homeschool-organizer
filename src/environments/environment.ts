@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyBnmznXh0kzvPJvSyewsImCf5mqnSdE6N0",
+    authDomain: "homeschool-organizer-942fc.firebaseapp.com",
+    databaseURL: "https://homeschool-organizer-942fc.firebaseio.com",
+    projectId: "homeschool-organizer-942fc",
+    storageBucket: "homeschool-organizer-942fc.appspot.com",
+    messagingSenderId: "942193668026",
+    appId: "1:942193668026:web:915b83fdfeec9503937783"
+  }
 };
 
 /*
