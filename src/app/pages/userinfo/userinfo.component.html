@@ -6,13 +6,14 @@
                     Hello!
                 </h2>
                 <h4><b>User email:</b>{{authservice.currentUserName}}</h4>
-                <button class="btn-danger" (click)="authservice.singout()">Logout</button>
+                <button class="btn-danger" (click)="authservice.signout()">Logout</button>
                 
             </div>
             
         </div>
         <div class="col-md-4 p-5">
             <h3 class="text-center">Child Accounts</h3>
+            <app-child-list></app-child-list>
 
         </div>
         
