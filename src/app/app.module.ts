@@ -17,6 +17,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { UserinfoComponent } from './pages/userinfo/userinfo.component';
 import { SearchComponent } from './pages/search/search.component';
 import { SchoolapiService } from './services/schoolapi.service';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,9 @@ import { SchoolapiService } from './services/schoolapi.service';
 
   ],
   providers: [
-    SchoolapiService
+    SchoolapiService,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [AppComponent]
 })
