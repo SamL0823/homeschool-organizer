@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success" (click)="newChild()">Add Child</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12" *ngIf="checkBool()">
+        <form (ngSubmit)="addChild()">
+            <h3>Enter New Child</h3>
+            <div class="form-group p-2">
+            <input type="childNameInput" name="childNameInput" class="form-control" [(ngModel)]="childNameInput" placeholder="Enter child's name" required>
+        </div>
+        <div class="form-group p-2">
+            <!-- <input type="childGradeInput" name="childGradeInput" class="form-control" [(ngModel)]="childGradeInput" placeholder="Enter child's grade" required> -->
+            <div class="form-group">
+
+	<label for="state" class="col-sm-2 control-label">Grade</label>
+
+	<div class="col-xs-12">
+<!-- ngFor loop here.  work smart not hard-->
+		<select class="form-control" id="grade" name="grade">
+
+			<option value="prek">Pre-K</option>
+            <option value="first">1st</option>
+            <option value="second">2nd</option>
+            <option value="third">3rd</option>
+            <option value="fourth">4th</option>
+            <option value="fifth">5th</option>
+            <option value="sixth">6th</option>
+            <option value="seventh">7th</option>
+            <option value="eighth">8th</option>
+            <option value="ninth">9th</option>
+            <option value="tenth">10th</option>
+            <option value="eleventh">11th</option>
+            <option value="twelth">12th</option>
+            
+		</select>
+
+	</div>
+
+</div>
+        </div>
+        <div class="form-group p-2">
+            <button type="submit" class="btn">Add</button>
+        </div>
+        </form>
+    </div>
+</div>
+<div class="row" *ngIf="!checkBool()">
+    <div class="col-xs-12">
+        <a 
+        href="/childinfo" 
+        class="list-group-item clearfix"  
+        *ngFor="let child of children">
+            <div class="pull-left">
+                <h4 class="list-group-item-heading">{{child.name}}</h4>
+                <p class="list-group-item-text">{{child.grade}}</p>
+            </div>
+        </a>
+    </div>
+</div>
