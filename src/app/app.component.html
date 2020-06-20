@@ -1,1 +1,6 @@
 <router-outlet></router-outlet>
+<ul>
+    <li *ngFor="let kid of (kids | async)">
+      {{ kid.name }}
+    </li>
+  </ul>
