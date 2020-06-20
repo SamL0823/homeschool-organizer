@@ -15,6 +15,10 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { UserinfoComponent } from './pages/userinfo/userinfo.component';
+
+import { ChildListComponent } from './child-list/child-list.component';
+import { ChildinfoComponent } from './pages/childinfo/childinfo.component';
+
 import { SearchComponent } from './pages/search/search.component';
 import { SchoolapiService } from './services/schoolapi.service';
 
@@ -24,7 +28,10 @@ import { SchoolapiService } from './services/schoolapi.service';
     LoginComponent,
     RegisterComponent,
     UserinfoComponent,
+    ChildListComponent,
+    ChildinfoComponent,
     SearchComponent
+
   ],
   imports: [
     BrowserModule,
@@ -34,7 +41,6 @@ import { SchoolapiService } from './services/schoolapi.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule
-
   ],
   providers: [
     SchoolapiService

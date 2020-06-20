@@ -67,7 +67,7 @@ registerWithEmail(email: string, password: string) {
       });
   }
 
-  singout(): void
+  signout(): void
   {
     this.afu.signOut();
     this.router.navigate(['/login']);

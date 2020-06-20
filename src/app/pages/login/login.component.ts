@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   email = "";
   password = "";
   errorMessage = ''; // validation error handle
-  error: { name: string, message: string } = { name: '', message: '' }; // for firbase error handle
+  error: { name: string, message: string } = { name: '', message: '' }; // for firebase error handle
 
   constructor(private authservice: AuthService, private router: Router) { }
 
