@@ -12,7 +12,7 @@ export class ChildListComponent implements OnInit {
     new Child("Sam", "Pre-K")
   ];
   childNameInput: string;
-  childGradeInput: string;
+  childGradeSelection: string;
 
   addBool = false;
 
@@ -28,13 +28,18 @@ export class ChildListComponent implements OnInit {
   }
 
   addChild(){
-    var child = new Child(this.childNameInput, this.childGradeInput);
+    this.childGradeSelection = (<HTMLInputElement>document.getElementById("grade")).value;
+    var child = new Child(this.childNameInput, this.childGradeSelection);
     this.children.push(child);
     this.addBool = false;
   }
 
   checkBool(){
     return this.addBool;
+  }
+  
+  setGrade(){
+    
   }
 
 }

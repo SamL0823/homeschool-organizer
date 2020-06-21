@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Child } from './child.model'
 import { AngularFireDatabase, AngularFireList } from "@angular/fire/database"; 
 import * as firebase from 'firebase/app';
 
@@ -10,17 +11,17 @@ import * as firebase from 'firebase/app';
 })
 export class AppComponent implements OnInit {
   title = 'homeschool-organizer';
-  kids: AngularFireList<any>;
+  childProfiles: AngularFireList<any>;
 
   constructor(private af: AngularFireDatabase) {
     
   }
   ngOnInit(): void {
-    this.kids = this.af.list('/kids');
+    this.childProfiles = this.af.list('/childProfiles');
   }
 
-  // addKid(child: ChildProfile): void {
-  //   this.kids.push(child);
-  // }
+  addKid(child: Child): void {
+    this.childProfiles.push(child);
+  }
   
 }
