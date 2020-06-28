@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Child } from '../child.model';
+import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/services/data.service';
+import { literal } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-child-list',
@@ -14,9 +17,11 @@ export class ChildListComponent implements OnInit {
   childNameInput: string;
   childGradeSelection: string;
 
+
+
   addBool = false;
 
-  constructor() { }
+  constructor(private dataservice: DataService, private authservice: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -29,9 +34,11 @@ export class ChildListComponent implements OnInit {
 
   addChild(){
     this.childGradeSelection = (<HTMLInputElement>document.getElementById("grade")).value;
-    var child = new Child(this.childNameInput, this.childGradeSelection);
+    let child = new Child(this.childNameInput, this.childGradeSelection);
     this.children.push(child);
     this.addBool = false;
+
+    this.dataservice.create_NewChild(child);
   }
 
   checkBool(){

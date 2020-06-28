@@ -8,6 +8,7 @@ import {Router} from '@angular/router';
 export class AuthService {
 
   authState: any = null;
+  
 
   constructor(private afu: AngularFireAuth, private router: Router) { 
     this.afu.authState.subscribe((auth =>{
@@ -64,6 +65,7 @@ registerWithEmail(email: string, password: string) {
         console.log(error)
         throw error
       });
+      
   }
 
   signout(): void

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,7 @@ export class RegisterComponent implements OnInit {
   errorMessage = ''; // validation error handle
   error: { name: string, message: string } = { name: '', message: '' }; // for firbase error handle
 
-  constructor(private authservice: AuthService, private router:Router) { }
+  constructor(private authservice: AuthService, private router:Router, private dataservice: DataService) { }
 
   ngOnInit(): void {
   }
@@ -39,6 +40,13 @@ export class RegisterComponent implements OnInit {
           this.router.navigate(['/register'])
         })
     }
+    let User = {};
+    User['email'] = this.email;
+
+    this.dataservice.create_NewUser(User).then(res => {
+      this.email = "";
+      this.password = "";
+    })
   }
 
   validateForm(email, password)

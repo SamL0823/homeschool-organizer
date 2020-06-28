@@ -22,6 +22,7 @@ import { ChildinfoComponent } from './pages/childinfo/childinfo.component';
 import { SearchComponent } from './pages/search/search.component';
 import { SchoolapiService } from './services/schoolapi.service';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
   providers: [
     SchoolapiService,
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    DataService
   ],
   bootstrap: [AppComponent]
 })
