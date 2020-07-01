@@ -20,8 +20,6 @@ export class AppComponent implements OnInit {
     this.childProfiles = this.af.list('/childProfiles');
   }
 
-  addKid(child: Child): void {
-    this.childProfiles.push(child);
-  }
+
   
 }

@@ -4,6 +4,7 @@ import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 import { literal } from '@angular/compiler/src/output/output_ast';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-child-list',
@@ -21,7 +22,7 @@ export class ChildListComponent implements OnInit {
 
   addBool = false;
 
-  constructor(private dataservice: DataService, private authservice: AuthService) { }
+  constructor(private dataservice: DataService, private http: HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -38,7 +39,9 @@ export class ChildListComponent implements OnInit {
     this.children.push(child);
     this.addBool = false;
 
-    this.dataservice.create_NewChild(child);
+    // this.dataservice.create_NewChild(child);
+
+    // this.http.post('https://homeschool-organizer-942fc.firebaseio.com/Users' + , child)
   }
 
   checkBool(){
