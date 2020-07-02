@@ -16,10 +16,8 @@ export class SchoolapiService {
   constructor(public httpclient: HttpClient) { }
 
   getSchoolsByState(stateCode: string, zipcode: string): Observable<any> {
-    this.apiData = this.httpclient.get(this.apiUrl + stateCode + '&q=' + zipcode); //CA is temp, will be stateCode
-    return this.apiData;
+    return this.httpclient.get(this.apiUrl + stateCode + '&q=' + zipcode, {headers: {"Access-Control-Allow-Origin": "*"}}); 
+    
   }
-  //the api requires a state and a query string '&q='
-  //zipcode works as query string when tested in postman
-  //additional options include levelCode "elementary-schools", "middle-schools", "high-schools"
+ 
 }

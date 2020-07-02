@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Child } from 'src/app/child.model';
 
 @Component({
   selector: 'app-childinfo',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChildinfoComponent implements OnInit {
 
+  @Input() currentChild: Child;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+ 
 
 }
